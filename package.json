@@ -1,0 +1,16 @@
+{
+  "name": "notification-system-root",
+  "version": "1.0.0",
+  "description": "Monorepo orchestrator for Renting Carnival Notification System",
+  "private": true,
+  "scripts": {
+    "install-all": "npm install --prefix server && npm install --prefix client && npm install --prefix admin",
+    "server": "npm run start --prefix server",
+    "client": "npm run dev --prefix client",
+    "admin": "npm run dev --prefix admin",
+    "dev": "concurrently \"npm run start --prefix server\" \"npm run dev --prefix client\" \"npm run dev --prefix admin\""
+  },
+  "dependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
